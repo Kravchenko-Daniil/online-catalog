@@ -1,0 +1,188 @@
+body {
+    background-color: #E6E6FA;
+    font-family: Montserrat;
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-form {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#dropdown-checkbox-selected {
+
+}
+
+header a {
+    color: #fff;
+}
+
+.header-search {
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    width: 200px;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+.card {
+    padding-bottom: 20px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+.card-info {
+    text-align: center;
+}
+
+.dropdown-check-list {
+  display: inline-block;
+  position: relative;
+  margin-left: 60px;
+}
+
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 50px 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.dropdown-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.items {
+    position: absolute;
+    background-color: #333;
+}
+
+.dropdown-check-list .anchor:active:after {
+  right: 8px;
+  top: 21%;
+
+}
+
+.dropdown-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 150px;
+}
+
+.dropdown-check-list ul.items li {
+  list-style: none;
+  align-items: left;
+}
+
+.dropdown-check-list.visible .anchor {
+  color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+  display: block;
+}
+
+.header-date1 {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+    margin-left: 60px;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    padding: 4px;
+
+}
+
+.header-date2 {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+    margin-left: 60px;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    padding: 4px;
+    margin-left: 0px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.header-btn {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.header-btn button {
+    background-color: black;
+    color: white;
+    padding: 10px 100px;
+    border-radius: 25px;
+}

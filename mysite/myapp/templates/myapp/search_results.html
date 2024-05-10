@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>My site</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/style.css'%}">
+    <script src="{% static 'myapp/js/script.js' %}"></script>
+
+</head>
+<body>
+<header>
+    <div>
+        <div class="header-title">
+            <a href="{% url 'index' %}"><h1>Онлайн-справочник</h1></a>
+        </div>
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" type="text" placeholder="Имя, фамилия" class="header-search">
+
+            <div id="list1" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Профессии</span>
+                <ul class="items">
+                    {% for c in prof %}
+                    <li><input type="checkbox" value="{{ c }}" name="prof"/>{{ c }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="list2" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Страна</span>
+                <ul class="items">
+                    {% for c in country %}
+                    <li><input type="checkbox" value="{{ c }}" name="country"/>{{ c }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <input type="number" name="date1" class="header-date1" onKeyPress="if(this.value.length==4) return false;" min="0"
+                   placeholder="Год рождения">
+            <input type="number" name="date2" class="header-date2" onKeyPress="if(this.value.length==4) return false;" min="0"
+                   placeholder="Год смерти">
+
+            <br/>
+            <div class="header-btn">
+                <button type="submit">Поиск</button>
+            </div>
+        </form>
+    </div>
+</header>
+
+<div class="container">
+    {% for people in query_res %}
+    <div class="card">
+        <a href="{{people.wiki}}"><img src={{people.photo}}></a>
+        <div class="card-info">
+            <h3><a href="{{people.wiki}}">{{ people.name }}</a></h3>
+            {{ people.country }} <br>
+            {{ people.profession }} <br>
+            {{ people.date1 }} - {{ people.date2 }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    var checkList = document.getElementById('list1');
+
+    checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+        if (checkList.classList.contains('visible'))
+            checkList.classList.remove('visible');
+        else
+            checkList.classList.add('visible');
+    }
+
+    var checkList2 = document.getElementById('list2');
+
+    checkList2.getElementsByClassName('anchor')[0].onclick = function(evt) {
+        if (checkList2.classList.contains('visible'))
+            checkList2.classList.remove('visible');
+        else
+            checkList2.classList.add('visible');
+    }
+</script>
+</body>
+</html>
